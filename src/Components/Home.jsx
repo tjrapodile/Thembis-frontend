@@ -1,8 +1,8 @@
 import React from 'react';
-import image1 from '../../src/assets/images/homeBackground.jpg';
-import image2 from '../../src/assets/images/businessOwner.jpg';
-import atcharImage from '../../src/assets/images/atcharHome.jpg';
-import chilliImage from '../../src/assets/images/chillHome.jpg';
+import image1 from '/images/homeBackground.jpg';
+import image2 from '/images/businessOwner.jpg';
+import atcharImage from '/images/atcharHome.jpg';
+import chilliImage from '/images/chillHome.jpg';
 import { Container, Row, Col, Card, Button, Form, Carousel } from 'react-bootstrap';
 import './HomePage.css';
 import { useNavigate } from 'react-router-dom';

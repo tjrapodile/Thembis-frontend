@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import React, { useState, useRef } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import logo from "../../src/assets/images/logo.png";
+import logo from "/images/logo.png";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
