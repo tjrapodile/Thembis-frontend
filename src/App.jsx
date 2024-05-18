@@ -265,7 +265,7 @@
         orderData.token = token;
         try {
           const response = await axios.post(
-            'https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com//order/create-checkout-session',
+            'https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/order/create-checkout-session',
             orderData
           );
           if (response.status === 200) {
