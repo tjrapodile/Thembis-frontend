@@ -1,6 +1,6 @@
   // App.css and other imports
   import './App.css';
-  import React, { useEffect, useState, useCallback } from 'react';
+  import { useEffect, useState, useCallback } from 'react';
   import { BrowserRouter, Routes, Route } from 'react-router-dom';
   import { Navbar } from './Components/Navbar';
   import { Products } from './Components/Products';
@@ -40,7 +40,7 @@
   };
     const fetchProductById = async (productId) => {
       try {
-        const response = await axios.get(`https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/product/${productId}`);
+        const response = await axios.get(`https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/product/${productId}`);
         return response.data;
       } catch (error) {
         toast.error("Failed to load product details");
@@ -51,7 +51,7 @@
       if (loggedInUser) {
         const token = localStorage.getItem('token');
         try {
-          const response = await axios.get('https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/cart/', {
+          const response = await axios.get('https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/cart/', {
             params: { token }
           });
           setCartItems(response.data.cartItems);
@@ -111,7 +111,7 @@
     
       try {
         const response = await axios.post(
-          'https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/cart/add/', 
+          'https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/cart/add/', 
           { productId, quantity: 1 }, // The payload is a plain object, no need to stringify
           {
               params: { token } 
@@ -148,7 +148,7 @@
 
       try {
         const response = await axios.delete(
-          `https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/cart/delete/${cartItemId}`,
+          `https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/cart/delete/${cartItemId}`,
           {
             params: { token } // Sending the token as query parameters
           }
@@ -183,7 +183,7 @@
 
       try {
         const response = await axios.patch(
-          `https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/cart/update/${cartItemId}`,
+          `https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/cart/update/${cartItemId}`,
           { quantity: newQuantity },
           {
             headers:{
@@ -265,7 +265,7 @@
         orderData.token = token;
         try {
           const response = await axios.post(
-            'https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/order/create-checkout-session',
+            'https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/order/create-checkout-session',
             orderData
           );
           if (response.status === 200) {

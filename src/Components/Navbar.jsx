@@ -47,7 +47,7 @@ export const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
 
         if (Object.keys(errors).length === 0) {
             try {
-                await axios.post('https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/user/signup', signupForm);
+                await axios.post('https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/user/signup', signupForm);
                 toast.success("Signup successful. Please log in.", {
                     style: {
                         border: '1px solid #4BB543',
@@ -103,7 +103,7 @@ export const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
 
         if (!errorOccurred) {
             try {
-                const response = await axios.post('https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/user/signin', loginForm);
+                const response = await axios.post('https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/user/signin', loginForm);
                 console.log('Login response:', response.data);
                 const  token = response.data.token;// Use the passed callback
                 if (token) {
