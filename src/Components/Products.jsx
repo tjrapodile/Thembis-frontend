@@ -10,7 +10,7 @@ export const Products = ({ handleAddToCart, ProductShow}) => {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/product/');
+            const response = await fetch('https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/product/');
             const data = await response.json();
             setProducts(data);
         } catch (error) {

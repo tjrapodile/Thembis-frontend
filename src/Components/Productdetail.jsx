@@ -16,7 +16,7 @@ export const Productdetail = ({ handleAddToCart }) => {
                 return;
             }
             try {
-                const response = await axios.get(`https://thembis-bold-bite-bazaar-ea2870384a99.herokuapp.com/product/${productId}`);
+                const response = await axios.get(`https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/product/${productId}`);
                 setProduct(response.data); // Assuming the response has a `product` property
             } catch (error) {
                 toast.error("Failed to load product details");
